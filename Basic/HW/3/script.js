@@ -60,7 +60,7 @@ console.log(multiplication(5, 0));
 
 // 4. Деление
 
-const division = (num1, num2) => (num2!==0) ? num1 / num2: "На ноль делить нельзя!";
+const division = (num1, num2) => (num2 !== 0) ? num1 / num2 : "На ноль делить нельзя!";
 
 console.log(division(5, 2));
 console.log(division(5, 0));
