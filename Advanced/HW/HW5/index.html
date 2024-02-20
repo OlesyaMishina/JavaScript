@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content"></div>
+
+    <script src="errors.js"></script>
+    <script>
+        'use strict'
+
+        const data = JSON.parse(datainfo);
+        console.log(data);
+
+        const contentEl = document.querySelector('.content');
+
+        data.forEach(data => {
+
+            const divError = document.createElement('div');
+            divError.classList.add('error_type');
+            contentEl.appendChild(divError);
+
+            const imgEl = document.createElement('img');
+            imgEl.classList.add('image');
+            imgEl.src = data.image;
+            imgEl.alt = 'photo';
+            imgEl.width = 200;
+            divError.appendChild(imgEl);
+
+            const errorContentEl = document.createElement('div');
+            errorContentEl.classList.add('error_type');
+            divError.appendChild(errorContentEl);
+
+            const statusEl = document.createElement('h2');
+            statusEl.classList.add('status');
+            statusEl.textContent = data.status;
+            errorContentEl.appendChild(statusEl);
+
+            const pointerEl = document.createElement('p');
+            pointerEl.classList.add('pointer');
+            pointerEl.textContent = data.pointer;
+            errorContentEl.appendChild(pointerEl);
+
+            const detailEl = document.createElement('p');
+            detailEl.classList.add('detail');
+            detailEl.textContent = data.detail;
+            errorContentEl.appendChild(detailEl);
+
+        });     
+    </script>
+</body>
+
+</html>
