@@ -55,10 +55,12 @@
         const featuredEls = document.querySelector('.featuredItems');
 
         data.forEach(data => {
-
+            
             const featuredEl = document.createElement('div');
             featuredEl.classList.add('featuredItem');
+            featuredEl.id = data.id;
             featuredEls.appendChild(featuredEl);
+            
 
             const featuredImgEl = document.createElement('div');
             featuredImgEl.classList.add('featuredImg');
@@ -96,7 +98,9 @@
             productPriceEl.classList.add('productPrice');
             productPriceEl.textContent = data.productPrice;
             featuredDataEl.appendChild(productPriceEl);
-        });     
+        });    
+        
+console.log(featuredEls);
     </script>
 
 </body>
